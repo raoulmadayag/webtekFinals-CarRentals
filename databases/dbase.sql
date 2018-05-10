@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 10, 2018 at 10:26 AM
+-- Generation Time: May 10, 2018 at 03:04 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -114,10 +114,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   `lastname` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `acctype` enum('Admin','Client','Service Provider') DEFAULT NULL,
-  `status` enum('Approved','Pending','Decline') DEFAULT 'Pending',
+  `status` enum('Approved','Pending','Declined') DEFAULT 'Pending',
   `contact_number` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idUsers`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -125,8 +125,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`idUsers`, `username`, `email`, `firstname`, `lastname`, `password`, `acctype`, `status`, `contact_number`) VALUES
 (1, 'Admin', 'admin@test.com', 'Francis', 'Cacas', 'admin', 'Admin', 'Approved', '09090909'),
-(2, 'SP', 'sp@test.com', 'Iyar', 'Benitez', 'sp', 'Service Provider', 'Approved', '09090909'),
-(3, 'Client', 'client@test.com', 'Sam', 'Paul', 'client', 'Client', 'Approved', '09090909');
+(2, 'SP', 'sp@test.com', 'Iyar', 'Benitez', 'sp', 'Service Provider', 'Pending', '09090909'),
+(3, 'Client', 'client@test.com', 'Sam', 'Paul', 'client', 'Client', 'Pending', '09090909'),
+(4, 'asd', 'asd@gmail.com', 'asd', 'asd', '123', 'Service Provider', 'Declined', 'asd');
 
 -- --------------------------------------------------------
 
