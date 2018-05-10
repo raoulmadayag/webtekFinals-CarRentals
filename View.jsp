@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Service Provider</title>
-        <link href="stylesheet.css" type="text/css" rel="stylesheet" media="all" />
+        <%-- <link href="stylesheet.css" type="text/css" rel="stylesheet" media="all" /> --%>
         <style type="text/css">
             body
             {
@@ -87,12 +87,12 @@
                       </ul>
                     </td>
                 </tr>
-                <tr>
+              <%--  <tr>
                     <td align="left">
                       <strong class="wel">Welcome&nbsp;</strong><strong class="bm"><%= session.getAttribute("userName") %></strong><br>
                        <a href="Login.jsp">Logout</a>
                     </td>
-                </tr>
+                </tr> --%>
                 <tr>
                     <td>
                         <h2>View Transaction</h2>
