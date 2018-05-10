@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+
+if(!isset($_SESSION['username'])){
+    $m = "Please Login first!";
+    echo "
+            <script type = 'text/javascript'>
+                alert('$m');
+                window.location.replace('../index.php');
+            </script>
+         ";
+}
+
+if($_SESSION['userType'] != 'Admin' ){
+    $m = "Unauthorize Success!";
+    echo "
+                <script type = 'text/javascript'>
+                    alert('$m');
+                    window.location.replace('../index.php');
+                </script>
+             ";
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -40,64 +64,43 @@
 		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
 	-->
 
-    	<div class="sidebar-wrapper">
+        <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
-                </a>
+                <a href="" class="simple-text"><strong>
+                    <?php
+                        echo $_SESSION['username'];
+
+                    ?>
+                </strong></a>
             </div>
 
             <ul class="nav">
-                <li>
+                <li >
                     <a href="dashboard.php">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
-                        <i class="ti-user"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="table.html">
+                    <a href="users.php">
                         <i class="ti-view-list-alt"></i>
-                        <p>Table List</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="ti-text"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="ti-pencil-alt2"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="ti-map"></i>
-                        <p>Maps</p>
+                        <p>Users</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="notifications.html">
+                    <a href="notifications.php">
                         <i class="ti-bell"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
+                <li class="active-pro">
+                    <a href="logout.php">
                         <i class="ti-export"></i>
-                        <p>Upgrade to PRO</p>
+                        <p>Logout</p>
                     </a>
                 </li>
             </ul>
-    	</div>
+        </div>
     </div>
 
     <div class="main-panel">
