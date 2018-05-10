@@ -6,11 +6,6 @@ if(isset($_SESSION['username'])){
 ?>
 
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
@@ -59,26 +54,44 @@ if(isset($_SESSION['username'])){
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
-                                <h1> Sign up </h1> 
-                                <p> 
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                            <form  action="register.php" autocomplete="on" method="post">
+                                <h1> Sign up </h1>
+                                <p>
+                                    <label for="usernamesignup" class="uname" data-icon="u">First Name</label>
+                                    <input id="usernamesignup" name="fname" required="required" type="text" placeholder="" />
                                 </p>
-                                <p> 
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                <p>
+                                    <label for="usernamesignup" class="uname" data-icon="u">Last Name</label>
+                                    <input id="usernamesignup" name="lname" required="required" type="text" placeholder="" />
+                                </p>
+                                <p>
+                                    <label for="usernamesignup" class="uname" data-icon="u">Contact No</label>
+                                    <input id="usernamesignup" name="num" required="required" type="text" placeholder="" />
+                                </p>
+                                <p>
+                                    <label for="usernamesignup" class="uname" data-icon="u">Username</label>
+                                    <input id="usernamesignup" name="username" required="required" type="text" placeholder="" />
+                                </p>
+                                <p>
+                                    <label for="usernamesignup" class="uname" data-icon="u">Email</label>
+                                    <input id="usernamesignup" name="email" required="required" type="email" placeholder="" />
                                 </p>
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                    <input id="passwordsignup" name="pass" required="required" type="password" placeholder=""/>
                                 </p>
                                 <p> 
                                     <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                    <input id="passwordsignup_confirm" name="pass2" required="required" type="password" placeholder=""/>
                                 </p>
+                                <div class="styled-select slate">
+                                <select name="type" class="form-control">
+                                    <option value="Service Provider">Service Provider</option>
+                                    <option value="Client">Client</option>
+                                </select>
+                                </div>
                                 <p class="signin button"> 
-									<input type="submit" value="Sign up"/> 
+									<input type="submit" id="sub" value="Sign up"/>
 								</p>
                                 <p class="change_link">  
 									Already a member ?
