@@ -1,8 +1,4 @@
-<%-- 
-    Document   : View
-    Created on : May 10 2018
-    Author     : Joshua Abubo
---%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
