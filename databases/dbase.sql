@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`idUsers`, `username`, `email`, `firstname`, `lastname`, `password`, `acctype`, `status`, `contact_number`) VALUES
 (1, 'Admin', 'admin@test.com', 'Francis', 'Cacas', 'admin', 'Admin', 'Approved', '09090909'),
 (2, 'SP', 'sp@test.com', 'Iyar', 'Benitez', 'sp', 'Service Provider', 'Pending', '09090909'),
-(3, 'Client', 'client@test.com', 'Sam', 'Paul', 'client', 'Client', 'Pending', '09090909'),
+(3, 'Client', 'serviceProvider@test.com', 'Sam', 'Paul', 'serviceProvider', 'Client', 'Pending', '09090909'),
 (4, 'asd', 'asd@gmail.com', 'asd', 'asd', '123', 'Service Provider', 'Declined', 'asd');
 
 -- --------------------------------------------------------

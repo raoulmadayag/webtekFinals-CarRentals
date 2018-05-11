@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userName` varchar(30) NOT NULL,
   `userEmail` varchar(60) NOT NULL,
   `userPass` varchar(255) NOT NULL,
-  `userType` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT 'client',
+  `userType` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT 'serviceProvider',
   `userStatus` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT 'pending',
   `userImage` varchar(500) NOT NULL DEFAULT 'profile/big_avatar.jpg',
   `userFirstName` varchar(45) NOT NULL,
@@ -151,10 +151,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPass`, `userType`, `userStatus`, `userImage`, `userFirstName`, `userLastName`) VALUES
-(4, 'feby', 'feby@gmail.com', 'd70e2b6923ba8eb735a5ded317684597f8b13423fe8ab43c8530f771808e220b', 'client', 'pending', '80882-Koala.jpg', 'Feby', 'Zarate'),
-(5, 'denise', 'denise@gmail.com', 'b0ee6afd12e7da9d94aabde4153fd8a3ec771002f11f038d359f30367ef1bc9b', 'client', 'pending', 'images/big_avatar.jpg', 'Denise', 'Ducusin'),
-(6, 'phoebe zarate', 'febz@gmail.com', 'd70e2b6923ba8eb735a5ded317684597f8b13423fe8ab43c8530f771808e220b', 'client', 'pending', 'images/big_avatar.jpg', 'Phoebe', 'Zarate'),
-(7, 'baltot', 'bale@gmail.com', 'c8388bbad0a1fe9561b945147794d1c8fb6cf8d388c20a865a1c6a1d72686767', 'client', 'pending', 'images/big_avatar.jpg', 'Justine', 'Alina');
+(4, 'feby', 'feby@gmail.com', 'd70e2b6923ba8eb735a5ded317684597f8b13423fe8ab43c8530f771808e220b', 'serviceProvider', 'pending', '80882-Koala.jpg', 'Feby', 'Zarate'),
+(5, 'denise', 'denise@gmail.com', 'b0ee6afd12e7da9d94aabde4153fd8a3ec771002f11f038d359f30367ef1bc9b', 'serviceProvider', 'pending', 'images/big_avatar.jpg', 'Denise', 'Ducusin'),
+(6, 'phoebe zarate', 'febz@gmail.com', 'd70e2b6923ba8eb735a5ded317684597f8b13423fe8ab43c8530f771808e220b', 'serviceProvider', 'pending', 'images/big_avatar.jpg', 'Phoebe', 'Zarate'),
+(7, 'baltot', 'bale@gmail.com', 'c8388bbad0a1fe9561b945147794d1c8fb6cf8d388c20a865a1c6a1d72686767', 'serviceProvider', 'pending', 'images/big_avatar.jpg', 'Justine', 'Alina');
 
 -- --------------------------------------------------------
 
