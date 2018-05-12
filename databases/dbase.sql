@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `dbase` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `dbase`;
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: dbase
+-- Host: localhost    Database: dbase
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.30-MariaDB
+-- Server version	5.7.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -55,8 +57,8 @@ CREATE TABLE `rent_form` (
   `Rent_iD` int(11) NOT NULL AUTO_INCREMENT,
   `Vehicle_Number` varchar(45) DEFAULT NULL,
   `SP_Name` varchar(45) DEFAULT NULL,
-  `Pickup_date` datetime DEFAULT NULL,
-  `Return_Date` datetime DEFAULT NULL,
+  `Pickup_date` date DEFAULT NULL,
+  `Return_Date` date DEFAULT NULL,
   `Rent_days` int(11) DEFAULT NULL,
   `Rent_Price` double DEFAULT NULL,
   `Total_Rent` varchar(45) DEFAULT NULL,
@@ -65,7 +67,7 @@ CREATE TABLE `rent_form` (
   `Rent_status` varchar(45) DEFAULT NULL,
   `ReservedBy` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Rent_iD`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +76,6 @@ CREATE TABLE `rent_form` (
 
 LOCK TABLES `rent_form` WRITE;
 /*!40000 ALTER TABLE `rent_form` DISABLE KEYS */;
-INSERT INTO `rent_form` VALUES (1,'001','Owen Hunt','0006-02-18 00:00:00','0006-05-18 00:00:00',3,1,'4,500','500','Full','Pending','Christina Yang'),(2,'002','Derek Sheperd','0006-12-18 00:00:00','0000-00-00 00:00:00',5,1,'6,000','450','Full','Pending','Meredeth Grey'),(3,'003','Arizona Robins','0006-08-18 00:00:00','0006-12-18 00:00:00',4,1,'4,000','420','Full','Pending','Kelly Torres'),(4,'004','Joe Wilson','0000-00-00 00:00:00','0000-00-00 00:00:00',3,1,'4,500','500','Full','Pending','Alex Kerev'),(5,'005','Miranda Bailey','0000-00-00 00:00:00','0000-00-00 00:00:00',7,1,'8,400','450','Full','Pending','Mark Slone');
 /*!40000 ALTER TABLE `rent_form` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,7 +106,6 @@ CREATE TABLE `reserve form` (
 
 LOCK TABLES `reserve form` WRITE;
 /*!40000 ALTER TABLE `reserve form` DISABLE KEYS */;
-INSERT INTO `reserve form` VALUES (1,6,'Derek Sheperd','0006-10-18 00:00:00','0000-00-00 00:00:00','000010','Meredeth Grey','0006-08-18 00:00:00',NULL),(2,9,'Alex Kerev','0000-00-00 00:00:00','0000-00-00 00:00:00','000012','Joe Wilson','0000-00-00 00:00:00',NULL),(3,12,'Zoe Grey','0006-02-18 00:00:00','0006-07-18 00:00:00','000014','Aimee Sheperd','0000-00-00 00:00:00',NULL),(4,14,'Mark Sloan','0006-05-18 00:00:00','0006-08-18 00:00:00','000015','Lexi Grey','0006-02-18 00:00:00',NULL),(5,15,'Arizona Robins','0000-00-00 00:00:00','0000-00-00 00:00:00','000017','Miranda Baile','0000-00-00 00:00:00',NULL);
 /*!40000 ALTER TABLE `reserve form` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,10 +118,13 @@ DROP TABLE IF EXISTS `transaction`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `transaction` (
   `idTransaction` int(11) NOT NULL AUTO_INCREMENT,
-  `transaction_idClient` int(11) NOT NULL,
-  `transaction_idSP` int(11) NOT NULL,
-  PRIMARY KEY (`idTransaction`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `transaction_idUsers` int(11) NOT NULL,
+  `rent_id` int(11) NOT NULL,
+  PRIMARY KEY (`idTransaction`),
+  KEY `t_idusers_idx` (`transaction_idUsers`),
+  KEY `t_rentID_idx` (`rent_id`),
+  CONSTRAINT `t_idusers` FOREIGN KEY (`transaction_idUsers`) REFERENCES `users` (`idUsers`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +154,7 @@ CREATE TABLE `users` (
   `status` enum('Approved','Pending','Declined') DEFAULT 'Pending',
   `contact_number` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idUsers`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-11 22:42:47
+-- Dump completed on 2018-05-12 16:43:35
