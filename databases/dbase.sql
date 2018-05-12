@@ -183,7 +183,6 @@ CREATE TABLE `vehicle_information` (
   `Rent_Price` int(11) DEFAULT NULL,
   `Car_type` varchar(45) DEFAULT NULL,
   `Vehicle_Number` varchar(45) DEFAULT NULL,
-  `Vehicle_serial` varchar(45) DEFAULT NULL,
   `Manufacturer` varchar(45) DEFAULT NULL,
   `photo` blob,
   `color` varchar(45) DEFAULT NULL,
