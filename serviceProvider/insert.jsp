@@ -47,13 +47,12 @@
             con.close();
             ps.close();
             
-         }catch(Exception ex)
-         {
+         }catch(Exception ex){
             out.println(ex.getMessage());
             out.println("Cannot Add New Car");
          }
        %>
-       
+
                <center><a href="AddCar.jsp">Go Back</a></center>
     </body>
 </html>
