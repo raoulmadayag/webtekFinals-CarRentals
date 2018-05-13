@@ -1,18 +1,13 @@
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Service Provider</title>
         <link href="stylesheet.css" type="text/css" rel="stylesheet" media="all" />
         <script type="text/javascript">
-
             function insvalid()
             {
-
                 if(document.form_insert.veid.value == "")
                     {
                         alert("Please Enter Vehicle ID");
@@ -73,8 +68,7 @@
                         alert("Please Enter Current Mileage");
                         return false;
                     }
-                return true;
-                   
+                return true;      
             }
             function clear()
             {
@@ -95,7 +89,6 @@
         </script>
     </head>
     <body>
-       
             <table border="0">
                 <tr>
                     <td class="top">
@@ -126,8 +119,7 @@
                         <h2>Add Record</h2>
                     </td>
                 </tr>
-                <tr>
-                    
+                <tr>          
                     <form name="form_insert" action="insert.jsp" method="post" onsubmit="return insvalid();">
                         <table border="0" align="center">
                                <tr>
@@ -197,7 +189,6 @@
                                </tr>
                         </table>                   
                     </form>
-                  
                 </tr>
                 <tr>
                     <table border="0" width="100%" height="100%">
@@ -209,7 +200,6 @@
                                 <li><a href="Accept/Deny.jsp">Update Request</a></li>
                                 <li><a href="ViewTransaction.jsp">View Transactions</a></li>
                             </ul>
-
                           </td>
                        </tr>
                        <tr>
@@ -221,6 +211,5 @@
                     </table>
                 </tr>
           </table>
-       
     </body>
 </html>
