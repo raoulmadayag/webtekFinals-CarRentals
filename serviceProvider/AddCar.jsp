@@ -1,78 +1,63 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd" >
+<!DOCTYPE HTML>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Service Provider</title>
         <link href="stylesheet.css" type="text/css" rel="stylesheet" media="all" />
         <script type="text/javascript">
-            function insvalid()
-            {
-                if(document.form_insert.veid.value == "")
-                    {
+            function insvalid(){
+                if(document.form_insert.veid.value == ""){
                         alert("Please Enter Vehicle ID");
                         return false;
                     }
-               if(document.form_insert.brnd.value == "")
-                    {
+               if(document.form_insert.brnd.value == ""){
                         alert("Please Enter Brand");
                         return false;
                     }
-               if(document.form_insert.mdl.value == "")
-                    {
+               if(document.form_insert.mdl.value == ""){
                         alert("Please Enter Model");
                         return false;
                     }
-               if(document.form_insert.yr.value == "")
-                    {
+               if(document.form_insert.yr.value == ""){
                         alert("Please Enter Year");
                         return false;
                     }
-               if(document.form_insert.capac.value == "")
-                    {
+               if(document.form_insert.capac.value == ""){
                         alert("Please Enter Capacity");
                         return false;
                     }
-               if(document.form_insert.rprice.value == "")
-                    {
+               if(document.form_insert.rprice.value == ""){
                         alert("Please Enter Rent Price");
                         return false;
                     }
-               if(document.form_insert.type.value == "")
-                    {
+               if(document.form_insert.type.value == ""){
                         alert("Please Enter Car Type");
                         return false;
                     }
-               if(document.form_insert.veno.value == "")
-                    {
+               if(document.form_insert.veno.value == ""){
                         alert("Please Enter Vehicle No");
                         return false;
                     }
-               if(document.form_insert.man.value == "")
-                    {
+               if(document.form_insert.man.value == ""){
                         alert("Please Enter Manufacturer");
                         return false;
                     }
-                if(document.form_insert.clr.value == "")
-                    {
+                if(document.form_insert.clr.value == ""){
                         alert("Please Enter Color");
                         return false;
                     }
-                if(document.form_insert.plate.value == "")
-                    {
+                if(document.form_insert.plate.value == ""){
                         alert("Please Enter License Plate");
                         return false;
                     }
-                if(document.form_insert.mile.value == "")
-                    {
+                if(document.form_insert.mile.value == ""){
                         alert("Please Enter Current Mileage");
                         return false;
                     }
                 return true;      
             }
-            function clear()
-            {
+            function clear(){
                 veid.value = "";
                 brnd.value = "";
                 mdl.value = "";
@@ -207,7 +192,6 @@
                             <h3>Developed by : Webtek Finals Group 3 &copy;2018</h3>
                           </td>
                        </tr>
-                       
                     </table>
                 </tr>
           </table>
