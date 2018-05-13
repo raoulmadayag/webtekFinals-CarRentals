@@ -31,7 +31,7 @@ CREATE TABLE `rent_form` (
   `Rent_days` int(11) DEFAULT NULL,
   `Rent_Price` double DEFAULT NULL,
   `ReservedBy` varchar(45) DEFAULT NULL,
-  `vehicle_id` varchar(45) DEFAULT NULL,
+  `vehicle_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`Rent_iD`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -133,11 +133,12 @@ DROP TABLE IF EXISTS `vehicle`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `vehicle` (
   `idvehicle` int(11) NOT NULL,
-  `year` varchar(45) DEFAULT NULL,
+  `year` int(4) DEFAULT NULL,
   `make` varchar(45) DEFAULT NULL,
   `model` varchar(45) DEFAULT NULL,
   `color` varchar(45) DEFAULT NULL,
-  `capacity` varchar(45) DEFAULT NULL,
+  `capacity` int(11) DEFAULT NULL,
+  `platenumber` int(11) DEFAULT NULL,
   PRIMARY KEY (`idvehicle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -160,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-14  0:58:40
+-- Dump completed on 2018-05-14  1:10:37
