@@ -1,22 +1,14 @@
-<%-- 
-    Document   : insert
-    Created on : May 10, 2018
-    Author     : Joshua Abubo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE HTML>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>insert JSP Page</title>
     </head>
     <body>
-       <%
 
+       <%
         String vecID = request.getParameter("veid");
         String brand = request.getParameter("brnd");
         String model = request.getParameter("mdl");
@@ -31,7 +23,6 @@
         String licePla = request.getParameter("plate");
         String curMil = request.getParameter("mile");
         
-
         try
          {
             Class.forName("com.mysql.jdbc.Driver");
@@ -56,14 +47,12 @@
             con.close();
             ps.close();
             
-         }catch(Exception ex)
-         {
+         }catch(Exception ex){
             out.println(ex.getMessage());
             out.println("Cannot Add New Car");
          }
        %>
 
-                <h1>Record Inserted...</h1><br>
                <center><a href="AddCar.jsp">Go Back</a></center>
     </body>
 </html>

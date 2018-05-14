@@ -2,63 +2,24 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE HTML>
 <html> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Service Provider</title>
         <link href="stylesheet.css" type="text/css" rel="stylesheet" media="all" />
-        <style type="text/css">
-            body
-            {
-                background-color:rgb(237,218,193);
-            }
-            .wel
-            {
-              color:rgb(121,56,250);
-              font-size:24px;
-            }
-            .bm
-            {
-                color:red;
-                font-size:18px;
-            }
-            a
-            {
-                text-decoration:none;
-                color:maroon;
-                font-size:20px;
-            }
-            a:hover
-            {
-                text-decoration:underline;
-                color:rgb(90,216,210);
-            }
-            h2
-            {
-                text-align:center;
-                color:olive;
-                font-size:30px;
-            }
-           
-        </style>
         <script type="text/javascript">
-            function del()
-            {
-                if(confirm("Do you want to delete This Record ?"))
-                {
+            function del(){
+                if(confirm("Do you want to delete This Record ?")){
 
-                }
-                else
-                {
+                }else{
                     return false;
                 }
             }
         </script>
     </head>
-    <body>
+    <body>'
+        '
         <%
             int count=0;
                          Class.forName("com.mysql.jdbc.Driver");
@@ -66,6 +27,7 @@
                          Statement st= con.createStatement();
                          ResultSet rs = st.executeQuery("select * from rent_form");
         %>
+
             <table border="0">
                 <tr>
                     <td class="top">
@@ -92,13 +54,11 @@
                        <a href="Login.jsp">Logout</a>
                     </td>
                 </tr>
-
                 <tr>
                     <td>
                         <h2>View Transaction</h2>
                     </td>
-                </tr>
-                    
+                </tr>  
                     <table border="0" align="center" cellpadding="2" cellspacing="2">
                         <tr class="field_name">
                             <td><div align="cente"><strong>Rent ID</strong></div></td>
@@ -115,7 +75,7 @@
                             <td><div align="cente"><strong>Reserved By</strong></div></td>
                             <td colspan="2"><div align="cente"><strong>Action</strong></div></td>
                         </tr>
-                         <%
+                        <%
 
                          while(rs.next())
                          {
@@ -135,12 +95,9 @@
                             <td><%= rs.getString("Gas_Level") %></td>
                             <td><%= rs.getString("Rent_status") %></td>
                             <td><%= rs.getString("ReservedBy") %></td>
-                            <td><div align="center"><a href="Update.jsp">Update</a></div></td>
-                            
+                            <td><div align="center"><a href="Update.jsp">Update</a></div></td>       
                         </tr>
-                        <% } %>
                     </table>
-                  
                 <tr>
                     <table border="0" width="100%" height="100%">
                         <tr>
@@ -151,7 +108,6 @@
                             <li><a href="Update.jsp">Update Request</a></li>
                             <li><a href="View.jsp">View Transactions</a></li>
                             </ul>
-
                           </td>
                        </tr>
                        <tr>
@@ -159,10 +115,8 @@
                             <h3>Developed by : Webtek Finals Group 3 &copy;2018</h3>
                           </td>
                        </tr>
-
                     </table>
                 </tr>
           </table>
-
     </body>
 </html>
