@@ -1,7 +1,7 @@
 <?php
 
 
-require '../admin/db.php';
+require 'admin/db.php';
 session_start();
 $user = $_POST['username'];
 $pass = $_POST['password'];
