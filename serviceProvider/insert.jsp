@@ -1,58 +1,36 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.sql.*" %>
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>insert JSP Page</title>
-    </head>
-    <body>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,java.util.*"%>
 
-       <%
-        String vecID = request.getParameter("veid");
-        String brand = request.getParameter("brnd");
-        String model = request.getParameter("mdl");
-        String year = request.getParameter("yr");
-        String cap = request.getParameter("capac");
-        String rentPrice = request.getParameter("rprice");
-        String carType = request.getParameter("type");
-        String vecNo= request.getParameter("veno");
-        String manuf = request.getParameter("man");
-        String photo = request.getParameter("phot");
-        String color = request.getParameter("colr");
-        String licePla = request.getParameter("plate");
-        String curMil = request.getParameter("mile");
-        
-        try
-         {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbase","root","");
-            String query = "insert into vehicle_information (Vehicle_ID,Brand,Model,Year,Capacity,Rent_Price,Car_type,Vehicle_Number,Manufacturer,photo,color,License_Plate,Current_Mileage)" +
-                    "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, vecID);
-            ps.setString(2, brand);
-            ps.setString(3, model);
-            ps.setString(4, year);
-            ps.setString(5, cap);
-            ps.setString(6, rentPrice);
-            ps.setString(7, carType);
-            ps.setString(8, vecNo);
-            ps.setString(9, manuf);
-            ps.setString(10, photo);
-            ps.setString(11, color);
-            ps.setString(12, licePla);
-            ps.setString(13, curMil);
-            ps.executeUpdate();
-            con.close();
-            ps.close();
-            
-         }catch(Exception ex){
-            out.println(ex.getMessage());
-            out.println("Cannot Add New Car");
-         }
-       %>
+<%
+String vehicle_Id = request.getParameter("vehicle_Id");
+String brand = request.getParameter("brand");
+String model = request.getParameter("model");
+String year = request.getParameter("year");
+String capacity = request.getParameter("capacity");
+String rent_Price = request.getParameter("rent_Price");
+String car_Type = request.getParameter("car_Type");
+String vehicle_No= request.getParameter("vehicle_No");
+String color = request.getParameter("color");
+String license_Plate = request.getParameter("license_Plate");
+String current_Mileage = request.getParameter("current_Mileage");
+String photo = request.getParameter("photo");
+try
+{
+Class.forName("com.mysql.jdbc.Driver");
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
+Statement st=conn.createStatement();
 
-               <center><a href="AddCar.jsp">Go Back</a></center>
-    </body>
-</html>
+int i=st.executeUpdate("insert into users(first_name,last_name,city_name,email)values('"+first_name+"','"+last_name+"','"+city_name+"','"+email+"')");
+
+int i=st.executeUpdate("insert into vehicle(vehicle_Id,brand,model,year,capacity,rent_Price,car_Type,vehicle_No,color,license_Plate,current_Mileage,photo)values('"+vehicle_Id+"','"+brand+"','"+model+"','"+year+"','"+capacity+"','"+rent_Price+"','"+car_Type+"','"+vehicle_No+"','"+color+"','"+license_Plate+"','"+current_Mileage+"','"+photo+"')");
+
+
+out.println("New Car Added!!");
+}
+catch(Exception e)
+{
+System.out.print(e);
+e.printStackTrace();
+}
+%>
