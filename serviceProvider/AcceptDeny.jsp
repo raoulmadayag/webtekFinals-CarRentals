@@ -39,6 +39,7 @@ ResultSet resultSet = null;
 				<td>Vehicle ID</td>
 				<td>Request Type</td>
 				<td>Status</td>
+				<td>Action</td>
 			</tr>
 			<%
 				try{
@@ -54,6 +55,10 @@ ResultSet resultSet = null;
 				<td><%=resultSet.getString("vehicle_Id") %></td>
 				<td><%=resultSet.getString("request_Type") %></td>
 				<td><%=resultSet.getString("status") %></td>
+				<td>
+					<button type="button" id=b1 onClick='updateTable(this)'>Accept</button>
+					<button type="button" id=b2 onClick='updateTable(this)'>Deny</button>
+				</td>
 			</tr>
 			<%
 				}

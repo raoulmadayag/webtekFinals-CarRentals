@@ -31,14 +31,21 @@ ResultSet resultSet = null;
         </ul>
       </div>
       <div>
-		<h1>Requests</h1>
+		<h1>Cars</h1>
 		<table border="1">
 			<tr>
-				<td>Request Id</td>
-				<td>User ID</td>
 				<td>Vehicle ID</td>
-				<td>Request Type</td>
-				<td>Status</td>
+				<td>Brand</td>
+				<td>Model</td>
+				<td>Year</td>
+				<td>Capacity</td>
+				<td>Rent Price</td>
+				<td>Car Type</td>
+				<td>Vehicle Number</td>
+				<td>Color</td>
+				<td>License Plate</td>
+				<td>Current Mileage</td>
+				<td>Photo</td>
 			</tr>
 			<%
 				try{
@@ -49,11 +56,18 @@ ResultSet resultSet = null;
 				while(resultSet.next()){
 			%>
 			<tr>
-				<td><%=resultSet.getString("request_Id") %></td>
-				<td><%=resultSet.getString("user_Id") %></td>
 				<td><%=resultSet.getString("vehicle_Id") %></td>
-				<td><%=resultSet.getString("request_Type") %></td>
-				<td><%=resultSet.getString("status") %></td>
+				<td><%=resultSet.getString("brand") %></td>
+				<td><%=resultSet.getString("model") %></td>
+				<td><%=resultSet.getString("year") %></td>
+				<td><%=resultSet.getString("capacity") %></td>
+				<td><%=resultSet.getString("rent_Price") %></td>
+				<td><%=resultSet.getString("car_Type") %></td>
+				<td><%=resultSet.getString("vehicle_No") %></td>
+				<td><%=resultSet.getString("color") %></td>
+				<td><%=resultSet.getString("license_Plate") %></td>
+				<td><%=resultSet.getString("current_Mileage") %></td>
+				<td><%=resultSet.getString("photo") %></td>
 			</tr>
 			<%
 				}
