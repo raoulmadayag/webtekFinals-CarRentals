@@ -18,7 +18,7 @@
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="/" class="navbar-brand"><b>Cars2</b>GO</a>
+          <a href="/index" class="navbar-brand"><b>Cars2</b>GO</a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
@@ -29,43 +29,41 @@
   <div class="content-wrapper">
     <div class="container">
      <section class="content-header">
-        <div class="col-md-9">
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Contact Details</h3>
+        <div class="col-md-5 col-sm-6 col-xs-12">
+          <div class="info-box">
+           <img src="/gen/images/car1.jpg" alt="car" height="150" width="250">
+            <div class="info-box-content">
+
+              <% if (mess.length == 0){ %>
+                <% } else { %>
+                  <% mess.forEach( function(Specs) { %>
+              <span class="info-box-number"><%= Specs.Brand %></span> 
+              <span class="info-box-text"><%=Specs.Model %></span>
+              <span class="info-box-text"><%= Specs.Year %></span>
+              <span class="info-box-text"><%=Specs.Capacity %></span>
+              <span class="info-box-text"><%=Specs.Airbags %></span>
+              <span class="info-box-number"> <%= Specs.Brand %></span>
+              <span class="info-box-text"><%=Specs.Transmission %></span>
+              <span class="info-box-text"> <%= Specs.Rent_Price %></span>
+              <span class="info-box-text"> <%=Specs.service_idSP%> </span>
+              <% }) %>
+              <% } %>
+            </div> 
+          </div> 
+        </div>
+             <div class="col-md-5 col-sm-6 col-xs-12">
+            <div class="info-box">
+           <img src="/gen/images/car2.jpg" alt="car" height="150" width="250">
+            <div class="info-box-content">
+              <span class="info-box-number">Hyundai Chuchu</span>
+              <span class="info-box-text">Passengers 4</span>
+              <span class="info-box-text">Bags 2</span>
+              <span class="info-box-text">Automatic/AC</span>
+              <span class="info-box-text">Php 1,000</span>
+              <span class="info-box-text"><a href="/viewmore"><button class="btn btn-primary">View</button></a></span>
             </div>
-            <form class="form-horizontal">
-              <div class="box-body">                
-                <div class="form-group">
-                  <label for="inputfirstname3" class="col-sm-2 control-label">First Name</label>
-                  <div class="col-sm-4">
-                    <input type="firstname" class="form-control" id="inputfirstname3" placeholder="First Name">
-                  </div>
-                  <label for="inputlastname3" class="col-sm-2 control-label">Last Name</label>
-                  <div class="col-sm-4">
-                    <input type="lastname" class="form-control" id="inputlastname3" placeholder="Last Name">
-                  </div>
-                </div> 
-                 <div class="form-group">
-                  <label for="inputemail3" class="col-sm-2 control-label">Email</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputemail3" placeholder="Email">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputnumber3" class="col-sm-2 control-label">Mobile Number</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputnumber3" placeholder="Mobile Number">
-                  </div>
-                </div>
-                  <div class="col-md-9">
-              <div class="box-footer">
-                <button type="submit" class="btn btn-info">Book now</button>
-              </div>
-                  </div>
-              </div>
-            </form>
-          </div>     
+          </div>
+        </div>   
       </section>
     </div>
   </div>
