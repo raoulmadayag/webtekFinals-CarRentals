@@ -14,16 +14,14 @@ String vehicle_No= request.getParameter("vehicle_No");
 String color = request.getParameter("color");
 String license_Plate = request.getParameter("license_Plate");
 String current_Mileage = request.getParameter("current_Mileage");
-String photo = request.getParameter("photo");
+String vehicle_Status = request.getParameter("vehicle_Status");
 try
 {
 Class.forName("com.mysql.jdbc.Driver");
 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
 Statement st=conn.createStatement();
 
-int i=st.executeUpdate("insert into users(first_name,last_name,city_name,email)values('"+first_name+"','"+last_name+"','"+city_name+"','"+email+"')");
-
-int i=st.executeUpdate("insert into vehicle(vehicle_Id,brand,model,year,capacity,rent_Price,car_Type,vehicle_No,color,license_Plate,current_Mileage,photo)values('"+vehicle_Id+"','"+brand+"','"+model+"','"+year+"','"+capacity+"','"+rent_Price+"','"+car_Type+"','"+vehicle_No+"','"+color+"','"+license_Plate+"','"+current_Mileage+"','"+photo+"')");
+int i=st.executeUpdate("insert into vehicle(vehicle_Id,brand,model,year,capacity,rent_Price,car_Type,vehicle_No,color,license_Plate,current_Mileage,vehicle_status)values('"+vehicle_Id+"','"+brand+"','"+model+"','"+year+"','"+capacity+"','"+rent_Price+"','"+car_Type+"','"+vehicle_No+"','"+color+"','"+license_Plate+"','"+current_Mileage+"','"+vehicle_Status+"')");
 
 
 out.println("New Car Added!!");
