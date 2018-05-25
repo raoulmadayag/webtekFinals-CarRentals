@@ -7,7 +7,7 @@ $user = $_POST['username'];
 $pass = $_POST['password'];
 
 
-$sql = "SELECT username,password,acctype FROM users WHERE username = ? AND password = ?";
+$sql = "SELECT username,password,acc_Type FROM user WHERE username = ? AND password = ?";
 $st = $conn->prepare($sql);
 $st->bind_param('ss',$user,$pass);
 $st->execute();

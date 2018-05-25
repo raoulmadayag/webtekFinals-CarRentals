@@ -1,12 +1,11 @@
 <?php
 
-require 'db.php';
+require 'admin/db.php';
 
 $user = $_POST['username'];
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $num = $_POST['num'];
-$email = $_POST['email'];
 $pass = $_POST['pass'];
 $type = $_POST['type'];
 
@@ -20,11 +19,11 @@ if($_POST['pass'] != $_POST['pass2']){
             </script>
          ";
 }else{
-    $sql = "INSERT INTO users(username,email,firstname,lastname,password,acctype,status,contact_number) VALUES 
-            ('$user','$email','$fname','$lname','$pass','$type','pending','$num')";
+    $sql = "INSERT INTO user(username,first_Name,last_Name,password,acc_Type,status,contact_No) VALUES 
+            ('$user','$fname','$lname','$pass','$type','pending','$num')";
     $r = $conn->query($sql);
-    if(!$r){
-        $m = "Error!";
+    if(!$r){var_dump($conn->error);
+        die;
 
         echo "
             <script type = 'text/javascript'>

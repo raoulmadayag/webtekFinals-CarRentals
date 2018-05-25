@@ -72,10 +72,6 @@ if(isset($_SESSION['username'])){
                                     <label for="usernamesignup" class="uname" data-icon="u">Username</label>
                                     <input id="usernamesignup" name="username" required="required" type="text" placeholder="" />
                                 </p>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Email</label>
-                                    <input id="usernamesignup" name="email" required="required" type="email" placeholder="" />
-                                </p>
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
                                     <input id="passwordsignup" name="pass" required="required" type="password" placeholder=""/>
