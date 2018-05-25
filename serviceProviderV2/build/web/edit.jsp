@@ -6,9 +6,9 @@
 </head>  
 <body>  
 <%@page import="com.javatpoint.dao.CarDao,com.javatpoint.bean.car"%>  
-  
+
 <%  
-String id=request.getParameter("vehicle_Id");  
+String id=request.getParameter("vehicle_Id");
 car u=CarDao.getRecordById(Integer.parseInt(id));  
 %>  
   
