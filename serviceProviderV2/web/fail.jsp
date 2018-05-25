@@ -6,8 +6,10 @@
 </head>  
 <body>  
   
-<p>Sorry, an error occurred!</p>  
-<jsp:include page="CarForm.html"></jsp:include>  
+    <p>Sorry, an error occurred!</p>  
+    <a href="addnewcar.jsp">Back</a>
+    <a href="index.jsp">Home</a>
+    <a href="ViewCar.jsp">View Cars</a>
   
 </body>  
 </html>  

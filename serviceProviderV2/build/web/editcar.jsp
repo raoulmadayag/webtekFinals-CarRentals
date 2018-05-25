@@ -2,6 +2,6 @@
 <jsp:useBean id="u" class="com.javatpoint.bean.car"></jsp:useBean>  
 <jsp:setProperty property="*" name="u"/>  
 <%  
-int car = CarDao.update(u);  
+int i = CarDao.update(u);  
 response.sendRedirect("ViewCar.jsp");  
 %>  

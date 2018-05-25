@@ -6,8 +6,9 @@
 </head>  
 <body>  
   
-<p>Car Record successfully saved!</p>  
-<jsp:include page="CarForm.html"></jsp:include>  
-  
+    <p>Car Record successfully saved!</p> <br>
+    <a href="addnewcar.jsp">Back</a>
+    <a href="index.jsp">Home</a>
+    <a href="ViewCar.jsp">View Cars</a>
 </body>  
 </html>  

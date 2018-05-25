@@ -1,13 +1,13 @@
 package com.javatpoint.bean;  
 public class car {
-public int vehicleId, requestId, transId, amount;
-public String brand,model,year,capacity,rentPrice,carType,
-        vehicleNo,color,licensePlate,currentMileage,vehicleStatus,modeOfPayment,status,firstName,lastName; 
+public int vehicle_Id;
+public String brand,model,year,capacity,rent_Price,car_Type,
+        vehicle_No,color,license_Plate,current_Mileage,vehicle_status; 
 public int getVehicleId(){
-    return vehicleId;
+    return vehicle_Id;
 }
-public void setVehicleId(int vehicleID){
-    this.vehicleId = vehicleId;
+public void setVehicleId(int vehicle_Id){
+    this.vehicle_Id = vehicle_Id;
 }
 public String getBrand(){
     return brand;
@@ -34,22 +34,16 @@ public void setCapacity(String capacity){
     this.capacity = capacity;
 }
 public String getRentPrice(){
-    return rentPrice;
+    return rent_Price;
 }
-public void setRentPrice(String rentPrice){
-    this.rentPrice = rentPrice;
+public void setRentPrice(String rent_Price){
+    this.rent_Price = rent_Price;
 }
 public String getCarType(){
-    return carType;
+    return car_Type;
 }
-public void setCarType(String carType){
-    this.carType = carType;
-}
-public String getVehicleNo(){
-    return vehicleNo;
-}
-public void setVehicleNo(String vehicleNo){
-    this.vehicleNo = vehicleNo;
+public void setCarType(String car_Type){
+    this.car_Type = car_Type;
 }
 public String getColor(){
     return color;
@@ -58,63 +52,27 @@ public void setColor(String color){
     this.color = color;
 }
 public String getLicensePlate(){
-    return licensePlate;
+    return license_Plate;
 }
-public void setLicensePlate(String licensePlate){
-    this.licensePlate = licensePlate;
+public void setLicensePlate(String license_Plate){
+    this.license_Plate = license_Plate;
+}
+public String getVehicleNo(){
+    return vehicle_No;
+}
+public void setVehicleNo(String vehicle_No){
+    this.vehicle_No = vehicle_No;
 }
 public String getCurrentMileage(){
-    return currentMileage;
+    return current_Mileage;
 }
-public void setCurrentMileage(String currentMileage){
-    this.currentMileage = currentMileage;
+public void setCurrentMileage(String current_Mileage){
+    this.current_Mileage = current_Mileage;
 }
 public String getVehicleStatus(){
-    return vehicleStatus;
+    return vehicle_status;
 }
-public void setVehicleStatus(String vehicleStatus){
-    this.vehicleStatus = vehicleStatus;
-}
-public int getAmount(){
-    return amount;
-}
-public void setAmount(int amount){
-    this.amount = amount;
-}
-public int getTransId(){
-    return transId;
-}
-public void setTransId(int transId){
-    this.transId = transId;
-}
-public int getRequestId(){
-    return requestId;
-}
-public void setRequestId(int requestId){
-    this.requestId = requestId;
-}
-public String getFirstName(){
-    return firstName;
-}
-public void setFirstName(String firstName){
-    this.firstName = firstName;
-}
-public String getLastName(){
-    return lastName;
-}
-public void setLastName(String lastName){
-    this.lastName = lastName;
-}
-public String getModeOfPayment(){
-    return modeOfPayment;
-}
-public void setModeOfPayment(String modeOfPayment){
-    this.modeOfPayment = modeOfPayment;
-}
-public String getStatus(){
-    return status;
-}
-public void setStatus(String status){
-    this.status = status;
+public void setVehicleStatus(String vehicle_status){
+    this.vehicle_status = vehicle_status;
 }
 }  

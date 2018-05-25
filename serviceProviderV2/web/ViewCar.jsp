@@ -22,7 +22,7 @@ request.setAttribute("list",list);
 <th>Capacity</th><th>Rent Price</th><th>Car Type</th>
 <th>Color</th><th>License</th><th>Vehicle Number</th><th>Current Mileage</th><th>Vehicle Status</th><th>Edit</th><th>Delete</th></tr>  
 <c:forEach items="${list}" var="u">  
-<tr><td>${u.getBrand()}</td><td>${u.getModel()}</td>  
+<tr><td>${u.getVehicleId()}</td><td>${u.getModel()}</td>  
 <td>${u.getYear()}</td><td>${u.getCapacity()}</td><td>${u.getRentPrice()}</td>
 <td>${u.getCarType()}</td><td>${u.getColor()}</td>
 <td>${u.getLicensePlate()}</td><td>${u.getVehicleNo()}</td><td>${u.getCurrentMileage()}</td><td>${u.getVehicleStatus()}</td>

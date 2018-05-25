@@ -143,8 +143,7 @@ CREATE TABLE `vehicle` (
   `license_Plate` varchar(50) NOT NULL,
   `vehicle_No` varchar(50) NOT NULL,
   `current_Mileage` varchar(50) NOT NULL,
-  `vehicle_status` varchar(45) NOT NULL DEFAULT 'undefined',
-  `photo` longblob NULL
+  `vehicle_status` varchar(45) NOT NULL DEFAULT 'undefined'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
