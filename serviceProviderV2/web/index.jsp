@@ -60,6 +60,13 @@
           </a>
           <h3></h3>
         </div>
+          <div class="circlet">
+          <!-- <div class="hvr-fade"> -->
+          <a href="ViewCar.jsp">
+            View Cars
+          </a>
+          <h3></h3>
+        </div>
       </div>
     </div>
   
