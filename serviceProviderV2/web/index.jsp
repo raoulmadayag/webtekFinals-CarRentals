@@ -15,13 +15,11 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
             <a class="navbar-brand" href="#">Service Provider Module</a>
-        </div>
     </nav>
 
     <div class="container">
-        <h1 class="my-4">Welcome!<small>to Service Provider</small></h1>
+        <h1 class="my-4">Welcome! <small>to Service Provider</small></h1>
         
         <div class="row">
             <div class="col-lg-12">
@@ -35,6 +33,9 @@
             </div>
             <div class="circlet">
                 <a href="ViewTransaction.jsp">View Transactions</a>
+            </div
+                <div class="circlet">
+                <a href="ViewCar.jsp">View Cars</a>
             </div>
         </div>
     </div>

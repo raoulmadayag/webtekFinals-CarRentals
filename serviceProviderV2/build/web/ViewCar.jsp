@@ -8,7 +8,7 @@
 <body>  
   
 <%@page import="com.javatpoint.dao.CarDao,com.javatpoint.bean.*,java.util.*"%>  
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
   
 <h1>Car List</h1>  
   
