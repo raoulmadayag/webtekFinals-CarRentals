@@ -5,7 +5,7 @@ require 'db.php';
 $aa = $_GET['num'];
 
 
-$sql = "UPDATE users SET status = 'declined' WHERE idUsers = '$aa'";
+$sql = "UPDATE user SET status = 'denied' WHERE user_Id = '$aa'";
 $conn->query($sql);
 
 

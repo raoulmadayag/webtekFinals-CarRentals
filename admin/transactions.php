@@ -81,13 +81,13 @@ if($_SESSION['userType'] != 'Admin' ){
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="users.php">
                         <i class="ti-view-list-alt"></i>
                         <p>Users</p>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="transactions.php">
                         <i class="ti-bell"></i>
                         <p>Transaction</p>
@@ -125,33 +125,31 @@ if($_SESSION['userType'] != 'Admin' ){
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header text-center">
-                                <h2>Pending Users</h2>
+                                <h2>Transactions</h2>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-striped">
                                     <thead>
-                                    <th>Username</th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Contact No</th>
-                                    <th>Address</th>
-                                    <th>Options</th>
+                                    <th>Transaction ID</th>
+                                    <th>Request ID</th>
+                                    <th>Amount</th>
+                                    <th>Payment Type</th>
+                                    <th>Status</th>
                                     </thead>
                                     <tbody>
                                     <?php
                                     require 'db.php';
 
-                                    $sql = "SELECT * FROM user WHERE status = 'pending'";
+                                    $sql = "SELECT * FROM transaction";
                                     $res = $conn->query($sql);
 
                                     while ($row = $res->fetch_assoc()){
-                                        echo "<tr><td>" . $row['username']  ."</td>" .
-                                            "<td>" . $row['first_Name'] . ' ' . $row['last_Name']  ."</td>" .
-                                            "<td>" . $row['acc_Type']  ."</td>".
-                                            "<td>" . $row['contact_No']  ."</td>" .
-                                            "<td>" . $row['address']  ."</td>";
-                                        echo "<td>" . "<a href=" . 'accept.php?num=' . $row['user_Id'] . "  " . " class='material-icons' >Accept</a>" . ' &nbsp ' .  "<a href=" . 'reject.php?num=' . $row['user_Id'] . "  " . " class='material-icons' >Reject</a>";
-                                    }
+                                        echo "<tr><td>" . $row['trans_Id']  ."</td>" .
+                                            "<td>" . $row['request_Id'] ."</td>" .
+                                            "<td>" . $row['amount']  ."</td>".
+                                            "<td>" . $row['mode_Of_Payment']  ."</td>" .
+                                            "<td>" . $row['status']  ."</td>";
+                                        }
                                     ?>
                                     </tbody>
                                 </table>
@@ -159,82 +157,6 @@ if($_SESSION['userType'] != 'Admin' ){
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="header text-center">
-                                <h2>Active Users</h2>
-                            </div>
-                            <div class="content table-responsive table-full-width">
-                                <table class="table table-striped">
-                                    <thead>
-                                    <th>Username</th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Contact No</th>
-                                    <th>Address</th>
-                                    <th>Options</th>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                    require 'db.php';
-
-                                    $sql = "SELECT * FROM user WHERE status = 'activated'";
-                                    $res = $conn->query($sql);
-
-                                    while ($row = $res->fetch_assoc()){
-                                        echo "<tr><td>" . $row['username']  ."</td>" .
-                                            "<td>" . $row['first_Name'] . ' ' . $row['last_Name']  ."</td>" .
-                                            "<td>" . $row['acc_Type']  ."</td>".
-                                            "<td>" . $row['contact_No']  ."</td>" .
-                                            "<td>" . $row['address']  ."</td>";
-                                        echo "<td>" . "<a href=" . 'deactivate.php?num=' . $row['user_Id'] . "  " . " class='material-icons' >Deactivate</a>";
-                                    }
-                                    ?>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="header text-center">
-                                <h2>Denied Users</h2>
-                            </div>
-                            <div class="content table-responsive table-full-width">
-                                <table class="table table-striped">
-                                    <thead>
-                                    <th>Username</th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Contact No</th>
-                                    <th>Address</th>
-                                    <th>Options</th>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                    require 'db.php';
-
-                                    $sql = "SELECT * FROM user WHERE status = 'denied'";
-                                    $res = $conn->query($sql);
-
-                                    while ($row = $res->fetch_assoc()){
-                                        echo "<tr><td>" . $row['username']  ."</td>" .
-                                            "<td>" . $row['first_Name'] . ' ' . $row['last_Name']  ."</td>" .
-                                            "<td>" . $row['acc_Type']  ."</td>".
-                                            "<td>" . $row['contact_No']  ."</td>" .
-                                            "<td>" . $row['address']  ."</td>";
-                                        echo "<td>" . "<a href=" . 'activate.php?num=' . $row['user_Id'] . "  " . " class='material-icons' >Activate</a>";
-                                    }
-                                    ?>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-                    </div>
-
-
 
                 </div>
             </div>
